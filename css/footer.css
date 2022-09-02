@@ -1,0 +1,7 @@
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+}
+.footer-top .widget-item {
+  flex: 0 0 25%;
+}/*# sourceMappingURL=footer.css.map */

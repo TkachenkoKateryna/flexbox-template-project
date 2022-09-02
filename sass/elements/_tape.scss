@@ -1,0 +1,147 @@
+.tape-section {
+  .breadcrumbs-links {
+    display: flex;
+    justify-content: end;
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.8)
+    );
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-bottom: 1rem;
+
+    a {
+      position: relative;
+      margin-right: 10px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      padding-right: 16px;
+    }
+
+    a:last-child {
+      padding-right: 0;
+      opacity: 0.5;
+    }
+
+    :not(:last-child):after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      right: 0;
+      width: 0;
+      height: 0;
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      border-left: 6px solid $clr-white;
+      opacity: 0.5;
+    }
+  }
+
+  .tape-title {
+    background: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.8)
+    );
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    margin-bottom: 1rem;
+    padding: 10px;
+  }
+
+  .tape {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px -10px 0;
+
+    @media screen and (max-width: $breakpoint-s) {
+      .tape-item {
+        width: 100%;
+      }
+    }
+
+    @media screen and (max-width: $breakpoint-md) and (min-width: $breakpoint-s) {
+      .tape-item {
+        width: calc(50% - 10px);
+      }
+    }
+
+    @media screen and (min-width: $breakpoint-md) {
+      .tape-item {
+        width: calc(33.3333% - 10px);
+      }
+    }
+
+    .tape-item {
+      border: $clr-light-black solid 5px;
+      border-radius: 5px;
+      position: relative;
+      margin: 0 10px 10px 0;
+
+      h4 {
+        position: absolute;
+        top: 0;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 100%;
+        height: 20%;
+        padding: 5px;
+        text-align: center;
+        background: $clr-light-black;
+      }
+
+      &_img--wrapper {
+        height: 100%;
+        width: 100%;
+      }
+
+      &_text {
+        display: none;
+        position: absolute;
+        bottom: 0;
+      }
+
+      &:hover {
+        h4 {
+          color: $clr-red;
+          background: $clr-dark-black;
+          transition: all 0.3s ease;
+        }
+        .tape-item_text {
+          display: block;
+          width: 100%;
+          height: 80%;
+          right: 0;
+          left: 0;
+          overflow: hidden;
+          text-align: center;
+          background: $clr-dark-black;
+          animation: slideUp 0.3s linear;
+        }
+      }
+
+      @keyframes slideUp {
+        0% {
+          height: 20%;
+        }
+        25% {
+          height: 40%;
+        }
+        50% {
+          height: 60%;
+        }
+        100% {
+          height: 80%;
+        }
+      }
+    }
+  }
+}

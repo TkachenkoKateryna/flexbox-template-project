@@ -1,0 +1,84 @@
+@use "sass:map";
+
+header {
+  color: $clr-white;
+  width: 100%;
+  margin-bottom: 2rem;
+
+  .logo-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 6.25rem;
+    background: $clr-light-black;
+    padding: 1rem;
+    text-align: center;
+
+    .logo-section__img--wrapper {
+      max-width: 20rem;
+    }
+    .logo-section__title {
+      font-size: 3rem;
+      text-transform: uppercase;
+      font-weight: 100;
+    }
+    .logo-section__text {
+      font-size: 1rem;
+      font-weight: 400;
+    }
+  }
+
+  nav {
+    background: $clr-medium-black;
+    border-bottom-left-radius: 0.625rem;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    justify-content: center;
+
+    .nav-links {
+      display: flex;
+      color: $clr-white;
+      gap: 1rem;
+    }
+
+    .link-item {
+      color: $clr-white;
+      font-size: 0.75rem;
+      margin: 0.25rem 0;
+      border-radius: 2px;
+      transition: $transition;
+      padding: 0.25rem 0.25rem;
+      &:hover {
+        color: $clr-red;
+        background: $clr-dark-black;
+      }
+    }
+
+    .nav-btn {
+      display: none;
+      padding: 0.5rem 0.25rem;
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-btn__row {
+      height: 0.1rem;
+      width: 1.25rem;
+      background: $clr-white;
+      margin-bottom: 0.15rem;
+    }
+
+    @media screen and (max-width: $breakpoint-md) {
+      .nav-links {
+        display: none;
+      }
+
+      .nav-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+    }
+  }
+}

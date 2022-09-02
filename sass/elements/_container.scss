@@ -1,0 +1,86 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 228px;
+  margin: 0 -10px 0 0;
+
+  & > * {
+    margin: 0 10px 10px 0;
+  }
+}
+
+@media screen and (min-width: $breakpoint-xs) and (max-width: $breakpoint-s) {
+  .container {
+    flex-direction: column;
+  }
+
+  .articles-section {
+    width: 100%;
+    order: 3;
+  }
+
+  .filters-section {
+    width: 100%;
+    order: 2;
+  }
+
+  .tape-section {
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    margin-bottom: 0;
+    order: 1;
+  }
+}
+
+@media screen and (max-width: $breakpoint-l) and (min-width: $breakpoint-s) {
+  .articles-section {
+    width: calc(50% - 10px);
+    order: 3;
+  }
+
+  .filters-section {
+    width: calc(50% - 10px);
+    order: 2;
+  }
+
+  .tape-section {
+    width: 100%;
+    order: 1;
+  }
+}
+
+@media screen and (min-width: $breakpoint-l) and (max-width: $breakpoint-xl) {
+  .articles-section {
+    width: 100%;
+  }
+
+  .filters-section {
+    flex: 0 0 220px;
+    max-width: 220px;
+  }
+
+  .tape-section {
+    flex: 0 0 calc(100% - 220px - 10px);
+    margin: 0 0 10px 0;
+  }
+}
+
+@media screen and (min-width: $breakpoint-xl) {
+  .filters-section {
+    flex: 0 0 220px;
+    max-width: 220px;
+    order: 1;
+  }
+
+  .tape-section {
+    flex: 1;
+    order: 2;
+  }
+
+  .articles-section {
+    flex: 0 0 240px;
+    max-width: 240px;
+    order: 3;
+  }
+}

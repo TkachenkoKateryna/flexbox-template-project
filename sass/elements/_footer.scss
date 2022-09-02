@@ -1,0 +1,53 @@
+@media screen and (min-width: $breakpoint-l) {
+  .footer-top_item {
+    flex: 1;
+  }
+}
+
+@media (max-width: $breakpoint-l) and (min-width: $breakpoint-s) {
+  .footer {
+    &-top {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      &_item {
+        flex: 0 0 calc(50% - 10px);
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-s) {
+  .footer {
+    &-top {
+      flex-direction: column;
+      &_item {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.footer {
+  margin-bottom: 10px;
+
+  &-top {
+    display: flex;
+    margin: 0 -10px 10px 0;
+
+    &_item {
+      height: fit-content;
+      margin: 0 10px 10px 0;
+    }
+  }
+
+  &-bottom {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+
+    &_item {
+      width: fit-content;
+    }
+  }
+}
